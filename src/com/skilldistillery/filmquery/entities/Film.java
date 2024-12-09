@@ -1,5 +1,6 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Film {
@@ -15,13 +16,15 @@ public class Film {
 	private double replacementCost;
 	private String rating;
 	private String specialFeatures;
+	private List<Actor> filmActors;
+	private String language;
 
 	public Film() {
 		super();
 	}
 
 	public Film(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
-			double rentalRate, int length, double replacementCost, String rating, String specialFeatures) {
+			double rentalRate, int length, double replacementCost, String rating, String specialFeatures, String language) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -34,6 +37,7 @@ public class Film {
 		this.replacementCost = replacementCost;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
+		this.language = language;
 	}
 
 	public int getId() {
@@ -102,6 +106,21 @@ public class Film {
 	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
 	}
+	public List<Actor> getFilmActors() {
+		return filmActors;
+	}
+
+	public void setFilmActors(List<Actor> filmActors) {
+		this.filmActors = filmActors;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 
 	@Override
 	public int hashCode() {
@@ -137,5 +156,4 @@ public class Film {
 				.append(specialFeatures).append("]");
 		return builder.toString();
 	}
-
 }
